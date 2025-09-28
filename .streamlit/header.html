@@ -1,0 +1,147 @@
+
+<div class="header-container">
+    <div class="logo-container">
+        <div class="netward-logo">
+            <div class="logo-circles">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+                <div class="circle circle-4"></div>
+            </div>
+            <span class="logo-text">Netward</span>
+        </div>
+    </div>
+    <div class="title-container">
+        <h1 class="main-title">Sistema de Gestión Netward</h1>
+        <p class="subtitle">Control de Inventario, nómina y Delivery para Heladerías</p>
+    </div>
+    <div class="info-container">
+        <div class="info-item">
+            <span class="info-icon">📆</span>
+            <span class="info-text" id="current-date"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">⏱️</span>
+            <span class="info-text" id="current-time"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Función para actualizar la fecha y hora
+    function updateDateTime() {
+        const now = new Date();
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = now.toLocaleDateString('es-ES', dateOptions);
+        
+        const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('current-time').textContent = now.toLocaleTimeString('es-ES', timeOptions);
+    }
+    
+    // Actualizar fecha/hora al cargar y cada segundo
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
+
+<style>
+.header-container {
+    display: flex;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    flex: 1;
+    text-align: center;
+}
+
+.netward-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo-circles {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #1e3a5f;
+    border-radius: 50%;
+}
+
+.circle-1 {
+    top: 0;
+    left: 20px;
+}
+
+.circle-2 {
+    top: 20px;
+    left: 0;
+}
+
+.circle-3 {
+    top: 20px;
+    left: 40px;
+}
+
+.circle-4 {
+    top: 40px;
+    left: 20px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e3a5f;
+    font-family: 'Arial', sans-serif;
+}
+
+.title-container {
+    flex: 3;
+    text-align: center;
+}
+
+.main-title {
+    color: #0066ff;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-style: italic;
+}
+
+.info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.info-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.info-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+</style>
