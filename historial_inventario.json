@@ -1,0 +1,126 @@
+[
+  {
+    "fecha": "2025-09-26",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-26",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-26",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 6,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja Bombon Crocante",
+    "cantidad": 4,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 6,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja Bombon Crocante",
+    "cantidad": 0,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Por Kilos",
+    "producto": "Vainilla",
+    "cantidad": [
+      "Casi lleno",
+      "Medio lleno"
+    ],
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Por Kilos",
+    "producto": "Vainilla",
+    "cantidad": {
+      "kilos_por_balde": [
+        2.4,
+        2.4
+      ],
+      "total_kilos": 4.8,
+      "tipo": "Quincenal"
+    },
+    "modo": "Modificar",
+    "tipo_inventario": "Quincenal"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Por Kilos",
+    "producto": "Vainilla",
+    "cantidad": {
+      "estados": [
+        "Medio lleno"
+      ],
+      "tipo": "Diario"
+    },
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Extras",
+    "producto": "Cinta Grido",
+    "cantidad": 6,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 12,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  }
+]
