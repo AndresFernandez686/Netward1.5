@@ -17,31 +17,18 @@ def guardar_inventario(inventario):
     with open(INVENTARIO_FILE, "w", encoding="utf-8") as f:
         json.dump(inventario, f, ensure_ascii=False, indent=2)
 
-def guardar_historial(fecha, usuario, categoria, producto, cantidad, modo):
+def guardar_historial(fecha, usuario, categoria, producto, cantidad, modo, tipo_inventario="Diario"):
     """Guarda un registro detallado del movimiento de inventario."""
-    # Manejar diferentes formatos de cantidad
-    if isinstance(cantidad, dict) and "tipo" in cantidad:
-        # Nuevo formato con tipo de inventario
-        registro = {
-            "fecha": str(fecha),
-            "usuario": usuario,
-            "categoria": categoria,
-            "producto": producto,
-            "cantidad": cantidad,
-            "modo": modo,
-            "tipo_inventario": cantidad.get("tipo", "Diario")
-        }
-    else:
-        # Formato anterior para compatibilidad
-        registro = {
-            "fecha": str(fecha),
-            "usuario": usuario,
-            "categoria": categoria,
-            "producto": producto,
-            "cantidad": cantidad,
-            "modo": modo,
-            "tipo_inventario": "Diario"  # Valor por defecto
-        }
+    # Crear registro con tipo de inventario explícito
+    registro = {
+        "fecha": str(fecha),
+        "usuario": usuario,
+        "categoria": categoria,
+        "producto": producto,
+        "cantidad": cantidad,
+        "modo": modo,
+        "tipo_inventario": tipo_inventario
+    }
     historial = []
     if os.path.exists(HISTORIAL_FILE):
         with open(HISTORIAL_FILE, "r", encoding="utf-8") as f:

@@ -122,5 +122,176 @@
     "cantidad": 12,
     "modo": "Modificar",
     "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 12,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 12,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 6,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 4,
+    "modo": "Modificar",
+    "tipo_inventario": "Semanal"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 4,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar",
+    "tipo_inventario": "Semanal"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar",
+    "tipo_inventario": "Diario"
+  },
+  {
+    "fecha": "2025-09-28",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 6,
+    "modo": "Modificar",
+    "tipo_inventario": "Semanal"
   }
 ]

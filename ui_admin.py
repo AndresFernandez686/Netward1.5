@@ -155,14 +155,24 @@ def admin_historial_ui(historial_json):
     # Asegurar que tenemos una columna para agrupar por fecha
     historial["Fecha_solo"] = historial["Fecha"].dt.date
 
-    empleados = ["Todos"] + sorted(historial["Usuario"].dropna().unique().tolist())
-    empleado_sel = st.selectbox("Empleado", empleados)
-    
-    # Selector de fecha con calendario
+    # Filtros principales
     col1, col2 = st.columns(2)
     with col1:
-        fecha_inicio = st.date_input("Fecha de inicio", value=date.today().replace(day=1))
+        empleados = ["Todos"] + sorted(historial["Usuario"].dropna().unique().tolist())
+        empleado_sel = st.selectbox("Empleado", empleados)
     with col2:
+        # Filtro por tipo de inventario
+        tipos_inventario = ["Todos"] + ["Diario", "Semanal", "Quincenal"]
+        if "tipo_inventario" in historial.columns:
+            tipos_disponibles = historial["tipo_inventario"].dropna().unique().tolist()
+            tipos_inventario = ["Todos"] + sorted(set(["Diario", "Semanal", "Quincenal"] + tipos_disponibles))
+        tipo_inventario_sel = st.selectbox("Tipo de inventario", tipos_inventario)
+    
+    # Selector de fecha con calendario
+    col3, col4 = st.columns(2)
+    with col3:
+        fecha_inicio = st.date_input("Fecha de inicio", value=date.today().replace(day=1))
+    with col4:
         # Último día del mes actual
         import calendar
         ultimo_dia = calendar.monthrange(date.today().year, date.today().month)[1]
@@ -171,6 +181,16 @@ def admin_historial_ui(historial_json):
     filtro = historial[(historial["Fecha"].dt.date >= fecha_inicio) & (historial["Fecha"].dt.date <= fecha_fin)]
     if empleado_sel != "Todos":
         filtro = filtro[filtro["Usuario"] == empleado_sel]
+    if tipo_inventario_sel != "Todos":
+        # Si no existe la columna tipo_inventario, asumimos que son registros antiguos (Diario)
+        if "tipo_inventario" in filtro.columns:
+            filtro = filtro[filtro["tipo_inventario"] == tipo_inventario_sel]
+        elif tipo_inventario_sel == "Diario":
+            # Mantener todos los registros si buscamos "Diario" y no hay columna tipo_inventario
+            pass
+        else:
+            # Si buscamos Semanal/Quincenal pero no hay columna, no hay resultados
+            filtro = filtro.iloc[0:0]  # DataFrame vacío
 
     if not filtro.empty:
         # Eliminar duplicados, manteniendo solo la última entrada de cada producto por día
@@ -207,12 +227,13 @@ def admin_historial_ui(historial_json):
             else:
                 return str(cantidad)
         
-        # Agregar columna formateada para mejor visualización
+        # Agregar columnas formateadas para mejor visualización
         filtro_mostrar = filtro.copy()
         filtro_mostrar["Cantidad_Formateada"] = filtro.apply(formatear_cantidad, axis=1)
+        filtro_mostrar["Tipo_Inventario"] = filtro_mostrar["tipo_inventario"].fillna("Diario")
         
         # Reordenar columnas para mejor visualización
-        columnas_mostrar = ["Fecha", "Usuario", "Producto", "categoria", "Cantidad_Formateada", "tipo_inventario", "modo"]
+        columnas_mostrar = ["Fecha", "Usuario", "Producto", "categoria", "Cantidad_Formateada", "Tipo_Inventario", "modo"]
         columnas_existentes = [col for col in columnas_mostrar if col in filtro_mostrar.columns]
         
         # Mostrar la tabla ordenada por fecha
@@ -221,10 +242,14 @@ def admin_historial_ui(historial_json):
         # Cambiado a Excel
         from utils import df_to_excel_bytes
         excel_bytes = df_to_excel_bytes(filtro)
+        # Nombre de archivo más descriptivo
+        tipo_archivo = tipo_inventario_sel if tipo_inventario_sel != "Todos" else "todos_tipos"
+        nombre_archivo = f"historial_{empleado_sel}_{tipo_archivo}_{fecha_inicio.strftime('%Y%m%d')}_{fecha_fin.strftime('%Y%m%d')}.xlsx".replace(" ", "_")
+        
         st.download_button(
             label="Descargar historial filtrado (Excel)",
             data=excel_bytes,
-            file_name=f"historial_{empleado_sel}_{fecha_inicio.strftime('%Y%m%d')}_{fecha_fin.strftime('%Y%m%d')}.xlsx".replace(" ", "_"),
+            file_name=nombre_archivo,
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
     else:
